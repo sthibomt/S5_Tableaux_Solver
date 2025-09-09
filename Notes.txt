@@ -1,0 +1,1 @@
+To run the program, open a terminal and run: ./s5_tableau "[]a(p-><>a p)"

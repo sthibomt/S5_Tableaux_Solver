@@ -1,6 +1,6 @@
-// #include <iostream>
 // #include <stdio.h>
-#include <bits/stdc++.h>
+// #include <bits/stdc++.h>
+#include <iostream>
 #include "Parser.h"
 
 using namespace std;
@@ -11,23 +11,19 @@ int main(int argc, char** argv)
     {
         cout << "Error";
         return 1;
-    }
-    // 
-    // return 0;
+    }    
+    
     string input = argv[1];   
     cout << input << endl;
-    // std::string input;
-    // std::cout << "Enter a formula: ";
-    // std::getline(std::cin, input);
-
-    try 
+  try 
     {
         Parser p(input);
-        auto f = p.parseAnd();
-        std::cout << "Parsed formula: " << f->str() << "\n";
+        // auto f = p.parseAnd();
+        auto f = p.parse();
+        cout << "Parsed formula: " << f->str() << "\n";
     } 
     catch (const std::exception& e) 
     {
-        std::cerr << "Parse error: " << e.what() << "\n";
+        cerr << "Parse error: " << e.what() << "\n";
     }
 }
