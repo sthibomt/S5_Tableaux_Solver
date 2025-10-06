@@ -21,7 +21,7 @@ int main(int argc, char **argv)
         // if (i > 1)
             // input += " ";
         // input += argv[i];
-    // }
+    // }    
 
     string input = argv[1];
     cout << "Input formula: " << input << endl;
