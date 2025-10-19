@@ -4,25 +4,24 @@
 #include <memory>
 #include <iostream>
 
-using namespace std;
-
 struct TableauNode 
 {
-    vector<shared_ptr<Formula>> formulas;
+    std::vector<std::shared_ptr<Formula>> formulas;
     bool closed = false;
 
     // ------------------------------------------------------------------------------------------------------------------
-    TableauNode(std::initializer_list<std::shared_ptr<Formula>> init) : formulas(init) 
-        {}
+    TableauNode() = default;
+    explicit TableauNode(std::initializer_list<std::shared_ptr<Formula>> init) : formulas(init)
+    {}
     
     // ------------------------------------------------------------------------------------------------------------------
     void print() const 
     {
-        cout << (closed ? "[CLOSED] " : "[OPEN] ") << "{ ";
+        std::cout << (closed ? "[CLOSED] " : "[OPEN] ") << "{ ";
         for (auto& f : formulas) 
         {
-            cout << f->str() << " ";
+            std::cout << f->str() << " ";
         }
-        cout << "}" << endl;
+        std::cout << "}" << std::endl;
     }
 };

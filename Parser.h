@@ -4,11 +4,9 @@
 #include <stdexcept>
 #include <string>
 
-using namespace std;
-
 class Parser
 {
-    string s;
+    std::string s;
     size_t i = 0;
 
     // ------------------------------------------------------------------------------------------------------------------
@@ -43,7 +41,7 @@ class Parser
     }
 
     // ------------------------------------------------------------------------------------------------------------------
-    shared_ptr<Formula> parseAtom()
+    std::shared_ptr<Formula> parseAtom()
     {
         skip();
         if (consume('~'))
@@ -76,7 +74,7 @@ class Parser
     }
 
     // ------------------------------------------------------------------------------------------------------------------
-    shared_ptr<Formula> parseAnd()
+    std::shared_ptr<Formula> parseAnd()
     {
         auto left = parseAtom();
         while (true)
@@ -136,6 +134,7 @@ public:
     {
     }
 
+    // ------------------------------------------------------------------------------------------------------------------
     std::shared_ptr<Formula> parse()
     {
         return parseImp();
